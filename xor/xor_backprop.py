@@ -23,12 +23,12 @@ loss.backward()
 # Final NN expression               -> F.cross_entropy(l2, y)
 # STEP 1: strip F.cross_entropy     -> l2
 #         get l2 gradient
-# STEP 3: unfold l2                 -> a1 @ W2 + b2
+# STEP 2: unfold l2                 -> a1 @ W2 + b2
 #         get W2, b2 gradients
-# STEP 4: strip W2, b2              -> a1
+# STEP 3: strip W2, b2              -> a1
 #         unfold a1                 -> torch.tanh(l1)
 #         get a1, l1 gradients
-# STEP 5: strip torch.tanh          -> l1
+# STEP 4: strip torch.tanh          -> l1
 #         unfold l1                 -> x @ W1 + b1
 #         get W1, b1 gradients
 
